@@ -1,0 +1,6 @@
+build:rpi --crosstool_top=//bazel/toolchain/aarch64-rpi3-linux-gnu:gcc_toolchain --cpu=aarch64
+build:bbb --crosstool_top=//bazel/toolchain/arm-cortex_a8-linux-gnueabihf:gcc_toolchain --cpu=armv7
+
+build:platform_build --incompatible_enable_cc_toolchain_resolution
+build:rpi-platform --config=platform_build --platforms=//bazel/platforms:rpi
+build:bbb-platform --config=platform_build --platforms=//bazel/platforms:bbb

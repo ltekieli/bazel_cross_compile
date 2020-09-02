@@ -1,0 +1,6 @@
+#!/bin/bash
+ 
+NAME=$(basename "$0")
+TOOLCHAIN_BINDIR=external/aarch64-rpi3-linux-gnu/bin
+ 
+exec "${TOOLCHAIN_BINDIR}"/"${NAME}" "$@"
